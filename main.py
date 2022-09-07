@@ -20,16 +20,6 @@ background-size: cover;
 
 #st.markdown(page_bg_img, unsafe_allow_html=True)
 
-select=option_menu(
-    menu_title='ANALYSIS',
-    options=['Home','Sales','Profit','Discount'],
-    icons=['house-fill','bag-dash-fill','currency-exchange','percent'] ,
-    orientation='horizontal',
-    default_index=1,
-    menu_icon=['clipboard-data']
-    )
-
-
 plot=st.empty()
 
 with plot.container():
