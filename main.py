@@ -26,8 +26,10 @@ with plot.container():
     col1,col2,col3=st.columns(3)
     with col1:
        st.write("List of World Space Explorations Mission Space Mission is a journey, by a manned or unmanned vehicle, into space to gather scientific data. It is important for global partnerships and exploration capabilities that help global preparedness for protecting the Earth from catastrophic. In this article, we are giving the list of World Space Explorations Mission which is very useful for the competitive examinations like UPSC-prelims, SSC, State Services, NDA, CDS, and Railways etc.")
-        
+       st.set_page_config(layout="wide")
+
     with col2:
+        st.set_page_config(layout="wide")
         df['Date']=pd.to_datetime(df['Date'])
         df['Year']=df['Date'].dt.year
         out = df.groupby(['Year']).count()
