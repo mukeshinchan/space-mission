@@ -35,6 +35,7 @@ with plot.container():
         fig.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
         st.plotly_chart(fig)
 
+        
     with col2:
         df['Date']=pd.to_datetime(df['Date'])
         df['Year']=df['Date'].dt.year
