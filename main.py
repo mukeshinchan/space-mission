@@ -36,7 +36,7 @@ with plot.container():
         fig.update_traces(line_color='#39bbf7')
         fig.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
         fig.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
-        #fig.update_xaxes(minor=dict(ticklen=6, tickcolor="black", showgrid=True))
+        fig.update_yaxes(range = [min(df['Year']),max(df['Year'])])
         st.plotly_chart(fig)
 
                 
