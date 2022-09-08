@@ -21,7 +21,7 @@ with col2:
     df['Year']=df['Date'].dt.year
     out = df.groupby(['Year']).count()
     out.reset_index(inplace = True)
-    fig=px.area(out,x=out['Year'],y=out['Mission'],color='Country',line_group="Country")
+    fig=px.area(out,x=out['Year'],y=out['Mission'])
     fig.update_traces(line_color='#39bbf7')
     fig.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     fig.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
