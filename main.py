@@ -4,6 +4,7 @@ from datetime import datetime as dt
 import plotly.express as px 
 import plotly.graph_objects as go
 from numerize import numerize
+from streamlit_option_menu import option_menu 
 df=pd.read_csv('space_missions.csv',encoding='ISO-8859-1')
 st.set_page_config(layout="wide")
 plot=st.empty()
