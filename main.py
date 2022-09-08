@@ -7,6 +7,10 @@ from numerize import numerize
 from streamlit_option_menu import option_menu 
 df=pd.read_csv('space_missions.csv',encoding='ISO-8859-1')
 st.set_page_config(layout="wide")
+country=[]
+for i in range(len(df)):
+  country.append(df['Location'].str.split(',')[:][i][-1].strip())
+df['Country']=country
 plot=st.empty()
 col1,col2,col3=st.columns(3)
 with col1:
@@ -23,10 +27,7 @@ with col2:
     fig.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
     fig.update_layout(width=1000)
     st.plotly_chart(fig)
-country=[]
-for i in range(len(df)):
-  country.append(df['Location'].str.split(',')[:][i][-1].strip())
-df['Country']=country
+
 year_out = df.groupby(['Year','Country'],as_index=False,sort=False).agg({'Mission':'count'}) 
 year_out_country= year_out.groupby(['Country','Year']).agg({'Mission':'sum'})
 year_out_country.reset_index(inplace=True)
