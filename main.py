@@ -31,20 +31,20 @@ year_out = df.groupby(['Year','Country'],as_index=False,sort=False).agg({'Missio
 year_out_country= year_out.groupby(['Country','Year']).agg({'Mission':'sum'})
 year_out_country.reset_index(inplace=True)
 a=year_out_country["Year"].min()
-cn=list(year_out_country['Country'].unique())
+
+cn1=list(year_out_country['Country'].unique())
+cn2=list(year_out_country['Country'].unique())
 
 fil1, fil2, fil3 = st.columns(3)
 with fil1:
-    cn_flt_1= st.selectbox('',cn)
+    cn_flt_1= st.selectbox('',cn1)
 with fil2:
     st.text("VS")
 with fil3:
-    cn_flt_2= st.selectbox('',cn)
+    cn_flt_2= st.selectbox('',cn2)
 
 col_1, col_2, col_3= st.columns(3)
 with col_1:  
-    cn1=list(year_out_country['Country'].unique())
-    cn2=list(year_out_country['Country'].unique())
     plt_1=year_out_country[((year_out_country['Country']==cn_flt_1 )| (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22) & (year_out_country['Year']>=a) ]
     temp_1=plt_1[(plt_1['Year']<=a+22) & (plt_1['Year']>=a) ]
     year_filt_1=temp_1['Year']
