@@ -22,7 +22,10 @@ with plot.container():
         fig.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
         fig.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
         st.plotly_chart(fig)
-        
+country=[]
+for i in range(len(df)):
+  country.append(df['Location'].str.split(',')[:][i][-1].strip())
+df['Country']=country
 year_out = df.groupby(['Year','Country'],as_index=False,sort=False).agg({'Mission':'count'}) 
 year_out_country= year_out.groupby(['Country','Year']).agg({'Mission':'sum'})
 year_out_country.reset_index(inplace=True)
