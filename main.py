@@ -33,9 +33,9 @@ year_out_country.reset_index(inplace=True)
 a=year_out_country["Year"].min()
 
 col_1, col_2, col_3= st.columns(3)
+col_cn_1,col_cn_2,col_cn_3=st.columns(3)
 with col_1:  
     cn1=list(year_out_country['Country'].unique())
-    col_cn_1,col_cn_2,col_cn_3=st.columns(3)
     with col_cn_1:
         cn_flt_1=st.selectbox('Select Country :',cn1)
     with col_cn_2:
