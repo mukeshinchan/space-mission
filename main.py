@@ -17,7 +17,7 @@ with col2:
     df['Year']=df['Date'].dt.year
     out = df.groupby(['Year']).count()
     out.reset_index(inplace = True)
-    fig=px.area(out,x=out['Year'],y=out['Mission'])
+    fig=px.area(out,x=out['Year'],y=out['Mission'],color='Country)
     fig.update_traces(line_color='#39bbf7')
     fig.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     fig.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
@@ -50,6 +50,7 @@ with col_1:
     fig_1.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
     fig_1.update_layout(width=450)
     st.plotly_chart(fig_1)
+    
 with col_2:
     plt_2=year_out_country[((year_out_country['Country']==cn1[-2]) | (year_out_country['Country']==cn1[-5])) & (year_out_country['Year']<=a+22*2) & (year_out_country['Year']>=a+22) ]
     temp_2=plt_2[(plt_2['Year']<=a+22*2 ) & (plt_2['Year']>=a+22)]
