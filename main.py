@@ -40,7 +40,7 @@ with col_1:
     fig_1=px.line(plt_1,x='Year',y='Mission',color='Country')
     fig_1.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     fig_1.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
-    fig_1.update_layout(width=200)
+    fig_1.update_layout(width=450)
     st.plotly_chart(fig_1)
 with col_2:
     plt_2=year_out_country[((year_out_country['Country']==cn1[-2]) | (year_out_country['Country']==cn1[-5])) & (year_out_country['Year']<=a+22*2) & (year_out_country['Year']>=a+22) ]
@@ -49,7 +49,7 @@ with col_2:
     fig_2=px.line(plt_2,x='Year',y='Mission',color='Country')
     fig_2.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     fig_2.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
-    fig_2.update_layout(width=200)
+    fig_2.update_layout(width=450)
     st.plotly_chart(fig_2)
 with col_3:
     plt_3=year_out_country[((year_out_country['Country']==cn1[-2]) | (year_out_country['Country']==cn1[-5])) & (year_out_country['Year']<=a+22*3) & (year_out_country['Year']>=a+22*2) ]
@@ -57,5 +57,5 @@ with col_3:
     fig_3=px.line(plt_3,x='Year',y='Mission',color='Country')
     fig_3.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     fig_3.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
-    fig_3.update_layout(width=100)
+    fig_3.update_layout(width=450)
     st.plotly_chart(fig_3)
