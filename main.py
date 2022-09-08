@@ -20,6 +20,7 @@ with col2:
     fig.update_traces(line_color='#39bbf7')
     fig.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     fig.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
+    fig_1.update_layout(width=1000)
     st.plotly_chart(fig)
 country=[]
 for i in range(len(df)):
