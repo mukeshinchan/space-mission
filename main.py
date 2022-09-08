@@ -41,7 +41,7 @@ with fil1:
 with fil2:
     st.text("VS")
 with fil3:
-    cn_flt_2= st.selectbox('',cn2)
+    cn_flt_2= st.selectbox('',cn1)
 
 col_1, col_2, col_3= st.columns(3)
 with col_1:  
