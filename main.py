@@ -34,12 +34,10 @@ a=year_out_country["Year"].min()
 
 cn1=list(year_out_country['Country'].unique())
 cn2=list(year_out['Country'].unique())
-fil1, fil2, fil3 = st.columns(3)
+fil1, fil2 = st.columns(3)
 with fil1:
     cn_flt_1= st.selectbox('',cn1)
 with fil2:
-    st.text("VS")
-with fil3:
     cn_flt_2= st.selectbox('',cn2)
 
 col_1, col_2, col_3= st.columns(3)
