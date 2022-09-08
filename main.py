@@ -42,7 +42,7 @@ with col_1:
         st.write(" VS ")
     with col_cn_3:
         cn_flt_2=st.selectbox('Select Country :',cn1)
-    plt_1=year_out_country[((year_out_country['Country']==cn_flt_1 | (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22) & (year_out_country['Year']>=a) ]
+    plt_1=year_out_country[((year_out_country['Country']==cn_flt_1 )| (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22) & (year_out_country['Year']>=a) ]
     temp_1=plt_1[(plt_1['Year']<=a+22) & (plt_1['Year']>=a) ]
     year_filt_1=temp_1['Year']
     fig_1=px.line(plt_1,x='Year',y='Mission',color='Country')
