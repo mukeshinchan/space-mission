@@ -33,16 +33,9 @@ year_out_country.reset_index(inplace=True)
 a=year_out_country["Year"].min()
 
 col_1, col_2, col_3= st.columns(3)
-with col_1:
-    select=option_menu(
-    menu_title='ANALYSIS',
-    options=['Home','Sales','Profit','Discount'],
-    icons=['house-fill','bag-dash-fill','currency-exchange','percent'] ,
-    orientation='horizontal',
-    default_index=1,
-    menu_icon=['clipboard-data']
-    )
+with col_1:  
     cn1=list(year_out_country['Country'].unique())
+    cn_flt=st.selectbox(cn1)
     plt_1=year_out_country[((year_out_country['Country']==cn1[-2]) | (year_out_country['Country']==cn1[-5])) & (year_out_country['Year']<=a+22) & (year_out_country['Year']>=a) ]
     temp_1=plt_1[(plt_1['Year']<=a+22) & (plt_1['Year']>=a) ]
     year_filt_1=temp_1['Year']
