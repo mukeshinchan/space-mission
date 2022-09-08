@@ -37,7 +37,7 @@ cn2=list(year_out_country['Country'].unique())
 
 fil1, fil2, fil3 = st.columns(3)
 with fil1:
-    cn_flt_1= st.selectbox('',cn1)
+    #cn_flt_1= st.selectbox('',cn1)
 with fil2:
     st.text("VS")
 with fil3:
