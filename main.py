@@ -33,13 +33,12 @@ a=year_out_country["Year"].min()
 
 plot_row_2=st.empty()
 with plot_row_2.container():
-    col_1,col2,col3=st.columns(3)
+    col_1,col_2,col_3=st.columns(3)
     with col_1:
         cn1=list(year_out_country['Country'].unique())
         plt_1=year_out_country[((year_out_country['Country']==cn1[-2]) | (year_out_country['Country']==cn1[-5])) & (year_out_country['Year']<=a+22) & (year_out_country['Year']>=a) ]
         temp_1=plt_1[(plt_1['Year']<=a+22) & (plt_1['Year']>=a) ]
         year_filt_1=temp_1['Year']
-        year_filt_1
         fig_1=px.line(plt_1,x='Year',y='Mission',color='Country')
         fig_1.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
         fig_1.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
