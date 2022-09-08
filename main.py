@@ -33,7 +33,7 @@ year_out_country.reset_index(inplace=True)
 a=year_out_country["Year"].min()
 
 cn1=list(year_out_country['Country'].unique())
-cn2=list(year_out_country['Country'].unique())
+cn2=list(year_out['Country'].unique())
 cn_flt_1= st.selectbox('',cn1)
 fil1, fil2, fil3 = st.columns(3)
 with fil1:
