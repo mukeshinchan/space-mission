@@ -42,8 +42,8 @@ with fil1:
     cn_flt_1= st.selectbox('',cn1)
 with fil2:
   def load_lottiefile(filepath : str):
-  with open(filepath , 'r') as f:
-    return json.load(f)
+    with open(filepath , 'r') as f:
+      return json.load(f)
   lottie_coding=load_lottiefile('coding.json')
   st_lottie(lottie_coding, speed=1,reverse=False,loop=True,quality='high',hight=300,width=300,key= None)
 with fil3:
