@@ -36,7 +36,7 @@ year_out_country.reset_index(inplace=True)
 a=year_out_country["Year"].min()
 
 def load_lottiefile(filepath : str):
-  with open(filepath.'r') as f:
+  with open(filepath , 'r') as f:
     return json.load(f)
 
 cn1=list(year_out_country['Country'].unique())
