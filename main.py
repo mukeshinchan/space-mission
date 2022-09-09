@@ -37,10 +37,13 @@ a=year_out_country["Year"].min()
 
 cn1=list(year_out_country['Country'].unique())
 cn2=list(year_out['Country'].unique())
-fil1, fil2 = st.columns(2)
+fil1, fil2,fil3= st.columns(3)
 with fil1:
     cn_flt_1= st.selectbox('',cn1)
 with fil2:
+  lottie_coding=load_lottiefile('coding.json')
+  st_lottie(lottie_coding, speed=1,reverse=False,loop=True,quality='high',hight=300,width=300,key= None)
+with fil3:
     cn_flt_2= st.selectbox('',cn2)
 
 col_1, col_2, col_3= st.columns(3)
