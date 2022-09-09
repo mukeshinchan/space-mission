@@ -35,16 +35,15 @@ year_out_country= year_out.groupby(['Country','Year']).agg({'Mission':'sum'})
 year_out_country.reset_index(inplace=True)
 a=year_out_country["Year"].min()
 
-def load_lottiefile(filepath : str):
-  with open(filepath , 'r') as f:
-    return json.load(f)
-
 cn1=list(year_out_country['Country'].unique())
 cn2=list(year_out['Country'].unique())
 fil1, fil2,fil3= st.columns(3)
 with fil1:
     cn_flt_1= st.selectbox('',cn1)
 with fil2:
+  def load_lottiefile(filepath : str):
+  with open(filepath , 'r') as f:
+    return json.load(f)
   lottie_coding=load_lottiefile('coding.json')
   st_lottie(lottie_coding, speed=1,reverse=False,loop=True,quality='high',hight=300,width=300,key= None)
 with fil3:
