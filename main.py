@@ -40,13 +40,13 @@ fil1, fil2,fil3= st.columns(3)
 with fil1:
   cn_flt_1= st.selectbox('',cn1)
   st.subheader('KPI')
-  year_out_country.metric(label='Country',value=200,delta=2)
+  fil1.metric(label='Country',value=200,delta=2)
 with fil2:
   st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMm8KX71grvCfruQTG1JTyoLmIlKI4rlk9jw&usqp=CAU')
 with fil3:
   cn_flt_2= st.selectbox('',cn2)
   st.subheader('KPI')
-  year_out_country.metric(label='Country',value=200,delta=2)
+  fil3.metric(label='Country',value=200,delta=2)
                
 col_1, col_2, col_3= st.columns(3)
 with col_1:  
