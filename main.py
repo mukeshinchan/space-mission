@@ -40,12 +40,7 @@ fil1, fil2,fil3= st.columns(3)
 with fil1:
   cn_flt_1= st.selectbox('',cn1)
 with fil2:
-  
-  def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
+  st.image('https://www.freepnglogos.com/uploads/vs-png/vintage-vs-with-black-lines-png-transparent-Images-12.png')
 with fil3:
   cn_flt_2= st.selectbox('',cn2)
 
