@@ -42,7 +42,7 @@ with fil1:
   st.subheader('KPI')
   fil1.metric(label='Country',value=200,delta=2)
 with fil2:
-  st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMm8KX71grvCfruQTG1JTyoLmIlKI4rlk9jw&usqp=CAU')
+  pass
 with fil3:
   cn_flt_2= st.selectbox('',cn2)
   st.subheader('KPI')
