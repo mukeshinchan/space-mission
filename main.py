@@ -40,7 +40,7 @@ fil1, fil2,fil3= st.columns(3)
 with fil1:
   cn_flt_1= st.selectbox('',cn1)
 with fil2:
-  st.image('https://www.freepnglogos.com/uploads/vs-png/vintage-vs-with-black-lines-png-transparent-Images-12.png')
+  st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMm8KX71grvCfruQTG1JTyoLmIlKI4rlk9jw&usqp=CAU')
 with fil3:
   cn_flt_2= st.selectbox('',cn2)
 
