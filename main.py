@@ -42,7 +42,7 @@ with fil1:
   st.subheader('KPI')
   fil1.metric(label='Country',value=200,delta=2)
 with fil2:
-  st.image('https://static.vecteezy.com/system/resources/previews/006/202/036/original/flat-isometric-concept-illustration-rocket-launch-analysis-data-free-vector.jpg',width=500,hight=300)
+  st.image('https://static.vecteezy.com/system/resources/previews/006/202/036/original/flat-isometric-concept-illustration-rocket-launch-analysis-data-free-vector.jpg',width=500,height =300)
 with fil3:
   cn_flt_2= st.selectbox('',cn2)
   st.subheader('KPI')
