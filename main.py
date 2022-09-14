@@ -42,7 +42,7 @@ with fil1:
   st.subheader('KPI')
   fil1.metric(label='Country',value=200,delta=2)
 with fil2:
-  st.image('https://images.pond5.com/flying-rocket-animation-black-background-footage-168420084_iconl.jpeg')
+  st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLr5RIeGckl5nkCEEk2-P_NjYJQ9vcHYUBcA&usqp=CAU')
 with fil3:
   cn_flt_2= st.selectbox('',cn2)
   st.subheader('KPI')
