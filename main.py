@@ -69,7 +69,7 @@ with col_2:
     fig_2.update_layout(width=450)
     st.plotly_chart(fig_2)
 with col_3:
-    plt_3=year_out_country[((year_out_country['Country']==cn_flt_1 | (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22*3) & (year_out_country['Year']>=a+22*2) ]
+    plt_3=year_out_country[((year_out_country['Country']==cn_flt_1) | (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22*3) & (year_out_country['Year']>=a+22*2) ]
     temp_3=plt_2[(plt_2['Year']<=a+22*3 ) & (plt_2['Year']>=a+22*2)]
     fig_3=px.line(plt_3,x='Year',y='Mission',color='Country')
     fig_3.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
