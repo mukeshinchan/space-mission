@@ -13,6 +13,7 @@ for i in range(len(df)):
   country.append(df['Location'].str.split(',')[:][i][-1].strip())
 df['Country']=country
 plot=st.empty()
+st.title('Space Mission Analysis ')
 col1,col2,col3=st.columns(3)
 with col1:
     st.header("The History of Space Exploration")
@@ -26,7 +27,7 @@ with col2:
     fig.update_traces(line_color='#39bbf7')
     fig.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     fig.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
-    fig.update_layout(width=1000)
+    fig.update_layout(width=1200)
     st.plotly_chart(fig)
 
 year_out = df.groupby(['Year','Country'],as_index=False,sort=False).agg({'Mission':'count'}) 
