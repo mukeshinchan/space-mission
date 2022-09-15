@@ -67,7 +67,7 @@ with col_1:
     fig_1=px.line(plt_1,x='Year',y='Mission',color='Country')
     fig_1.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
     fig_1.update_layout({'plot_bgcolor':'rgba(0,0,0,0)','paper_bgcolor':'rgba(0,0,0,0)'})
-    fig.update_traces(line_color='#39bbf7')
+    fig.update_traces(line_color='#12e3c0')
     fig_1.update_layout(width=450)
     st.plotly_chart(fig_1)
     
