@@ -39,15 +39,11 @@ cn1=list(year_out_country['Country'].unique())
 cn2=list(year_out['Country'].unique())
 fil1, fil2,fil3= st.columns(3)
 with fil1:
-  kpi,text= st.columns(2)
-  with kpi:
-    cn_flt_1= st.selectbox('',cn1)
-    st.subheader(cn_flt_1)
-    k1=year_out_country[(year_out_country['Country']==cn_flt_1 )]
-    fil1.metric(label='NO OF MISSIONS',value=k1['Mission'].sum(),delta=int(k1['Mission'].mean()))
-    st.subheader(f"{round(k1['per'].sum(),2)} %")
-  with text:
-    st.text('hi')
+  cn_flt_1= st.selectbox('',cn1)
+  st.subheader(cn_flt_1)
+  k1=year_out_country[(year_out_country['Country']==cn_flt_1 )]
+  fil1.metric(label='NO OF MISSIONS',value=k1['Mission'].sum(),delta=int(k1['Mission'].mean()))
+  st.subheader(f"{round(k1['per'].sum(),2)} %")
 
 with fil2:
   st.image('https://static.vecteezy.com/system/resources/previews/006/202/036/original/flat-isometric-concept-illustration-rocket-launch-analysis-data-free-vector.jpg',width=500)
