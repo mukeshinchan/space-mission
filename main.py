@@ -48,7 +48,7 @@ with fil3:
   cn_flt_2= st.selectbox('',cn2)
   st.subheader(cn_flt_1)
   k2=year_out_country[(year_out_country['Country']==cn_flt_2 )]
-  fil1.metric(label='Country',value=k2['Mission'].sum(),delta=k2['Mission'].mean())
+  fil3.metric(label='Country',value=k2['Mission'].sum(),delta=k2['Mission'].mean())
 
   
 plt_3=year_out_country[((year_out_country['Country']==cn_flt_1) | (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22*3) & (year_out_country['Year']>=a+22*2) ]
