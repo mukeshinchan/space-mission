@@ -46,7 +46,7 @@ with fil1:
     k1=year_out_country[(year_out_country['Country']==cn_flt_1 )]
     fil1.metric(label='NO OF MISSIONS',value=k1['Mission'].sum(),delta=int(k1['Mission'].mean()))
     st.subheader(f"{round(k1['per'].sum(),2)} %")
-   with text:
+  with text:
     st.text('hi')
 
 with fil2:
