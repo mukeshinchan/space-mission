@@ -42,15 +42,15 @@ with fil1:
   cn_flt_1= st.selectbox('',cn1)
   st.subheader(cn_flt_1)
   k1=year_out_country[(year_out_country['Country']==cn_flt_1 )]
-  fil1.metric(label='NO OF MISSIONS',value=k1['Mission'].sum(),delta=int(k1['Mission'].sum()))
+  fil1.metric(label='NO OF MISSIONS',value=k1['Mission'].sum(),delta=int(k1['Mission'].mean()))
 with fil2:
   st.image('https://static.vecteezy.com/system/resources/previews/006/202/036/original/flat-isometric-concept-illustration-rocket-launch-analysis-data-free-vector.jpg',width=500)
 with fil3:
   cn_flt_2= st.selectbox('',cn2)
   st.subheader(cn_flt_2)
   k2=year_out_country[(year_out_country['Country']==cn_flt_2 )]
-  fil3.metric(label='NO OF MISSIONS',value=k2['Mission'].sum(),delta=int(k2['Mission'].sum()))
-
+  fil3.metric(label='NO OF MISSIONS',value=k2['Mission'].sum(),delta=int(k2['Mission'].mean()))
+  st.text(k2['per'].sum())
   
 plt_3=year_out_country[((year_out_country['Country']==cn_flt_1) | (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22*3) & (year_out_country['Year']>=a+22*2) ]
 plt_1=year_out_country[((year_out_country['Country']==cn_flt_1 )| (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22) & (year_out_country['Year']>=a) ]
