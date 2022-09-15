@@ -37,20 +37,24 @@ a=year_out_country["Year"].min()
 cn1=list(year_out_country['Country'].unique())
 cn2=list(year_out['Country'].unique())
 fil1, fil2,fil3= st.columns(3)
+plt_3=year_out_country[((year_out_country['Country']==cn_flt_1) | (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22*3) & (year_out_country['Year']>=a+22*2) ]
+plt_1=year_out_country[((year_out_country['Country']==cn_flt_1 )| (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22) & (year_out_country['Year']>=a) ]
+plt_2=year_out_country[((year_out_country['Country']==cn_flt_1) | (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22*2) & (year_out_country['Year']>=a+22) ]
+
 with fil1:
   cn_flt_1= st.selectbox('',cn1)
-  st.subheader('KPI')
-  fil1.metric(label='Country',value=200,delta=2)
+  st.subheader(cn_flt_1)
+  fil1.metric(label='Country',value=plt_1[plt_1['Country']==cn_flt_1]['Mission'].sum(),delta=plt_1[plt_1['Country']==cn_flt_1]['Mission'].mean())
 with fil2:
   st.image('https://static.vecteezy.com/system/resources/previews/006/202/036/original/flat-isometric-concept-illustration-rocket-launch-analysis-data-free-vector.jpg',width=500)
 with fil3:
   cn_flt_2= st.selectbox('',cn2)
-  st.subheader('KPI')
-  fil3.metric(label='Country',value=200,delta=2)
+  st.subheader(cn_flt_2)
+  fil3.metric(label='Country',value=plt_1[plt_1['Country']==cn_flt_2]['Mission'].sum(),delta=plt_1[plt_1['Country']==cn_flt_2]['Mission'].mean())
+
                
 col_1, col_2, col_3= st.columns(3)
 with col_1:  
-    plt_1=year_out_country[((year_out_country['Country']==cn_flt_1 )| (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22) & (year_out_country['Year']>=a) ]
     temp_1=plt_1[(plt_1['Year']<=a+22) & (plt_1['Year']>=a) ]
     year_filt_1=temp_1['Year']
     fig_1=px.line(plt_1,x='Year',y='Mission',color='Country')
@@ -60,7 +64,6 @@ with col_1:
     st.plotly_chart(fig_1)
     
 with col_2:
-    plt_2=year_out_country[((year_out_country['Country']==cn_flt_1) | (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22*2) & (year_out_country['Year']>=a+22) ]
     temp_2=plt_2[(plt_2['Year']<=a+22*2 ) & (plt_2['Year']>=a+22)]
     year_filt_2=temp_2['Year']
     fig_2=px.line(plt_2,x='Year',y='Mission',color='Country')
@@ -69,7 +72,6 @@ with col_2:
     fig_2.update_layout(width=450)
     st.plotly_chart(fig_2)
 with col_3:
-    plt_3=year_out_country[((year_out_country['Country']==cn_flt_1) | (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22*3) & (year_out_country['Year']>=a+22*2) ]
     temp_3=plt_2[(plt_2['Year']<=a+22*3 ) & (plt_2['Year']>=a+22*2)]
     fig_3=px.line(plt_3,x='Year',y='Mission',color='Country')
     fig_3.update_layout(xaxis=dict(showgrid=False),yaxis=dict(showgrid=False))
