@@ -47,7 +47,7 @@ with fil1:
   st.subheader(f"{round(k1['per'].sum(),2)} %")
 
 with fil2:
-  st.image('https://icons-for-free.com/download-icon-basic+white-rocket-131994932102562159_512.png',width=300)
+  st.image('https://icons-for-free.com/download-icon-basic+white-rocket-131994932102562159_512.png',width=350)
 with fil3:
   cn_flt_2= st.selectbox('',cn2)
   st.subheader(cn_flt_2)
