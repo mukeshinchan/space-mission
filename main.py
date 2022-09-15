@@ -33,6 +33,7 @@ year_out = df.groupby(['Year','Country'],as_index=False,sort=False).agg({'Missio
 year_out_country= year_out.groupby(['Country','Year']).agg({'Mission':'sum'})
 year_out_country.reset_index(inplace=True)
 a=year_out_country["Year"].min()
+year_out_country['per']=(year_out_country['Mission']/year_out_country['Mission'].sum())*100
 
 cn1=list(year_out_country['Country'].unique())
 cn2=list(year_out['Country'].unique())
@@ -41,14 +42,14 @@ with fil1:
   cn_flt_1= st.selectbox('',cn1)
   st.subheader(cn_flt_1)
   k1=year_out_country[(year_out_country['Country']==cn_flt_1 )]
-  fil1.metric(label='Country',value=k1['Mission'].sum(),delta=k1['Mission'].mean())
+  fil1.metric(label='NO OF MISSIONS',value=k1['Mission'].sum(),delta=(k1['Mission']/k1['Mission'].sum())*100)
 with fil2:
   st.image('https://static.vecteezy.com/system/resources/previews/006/202/036/original/flat-isometric-concept-illustration-rocket-launch-analysis-data-free-vector.jpg',width=500)
 with fil3:
   cn_flt_2= st.selectbox('',cn2)
-  st.subheader(cn_flt_1)
+  st.subheader(cn_flt_2)
   k2=year_out_country[(year_out_country['Country']==cn_flt_2 )]
-  fil3.metric(label='Country',value=k2['Mission'].sum(),delta=k2['Mission'].mean())
+  fil3.metric(label='NO OF MISSIONS',value=k2['Mission'].sum(),delta=(k1['Mission']/k1['Mission'].sum())*100)
 
   
 plt_3=year_out_country[((year_out_country['Country']==cn_flt_1) | (year_out_country['Country']==cn_flt_2)) & (year_out_country['Year']<=a+22*3) & (year_out_country['Year']>=a+22*2) ]
